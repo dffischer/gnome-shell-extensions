@@ -8,7 +8,6 @@ arch=(any)
 url="https://extensions.gnome.org/extension/358/activities-configurator/"
 license=(GPLv2)
 depends=('gnome-shell>=3.8')
-install=gschemas.install
 source=("extension.html::$url"
         'archlinux-logo-gray-scalable.svg')
 md5sums=('SKIP'
@@ -45,11 +44,11 @@ build() {
   cp --remove-destination ../archlinux-logo-gray-scalable.svg archlinux-logo-gray-scalable.svg
 }
 
-package() {
-  cd extension
-  destdir="$pkgdir/usr/share/gnome-shell/extensions/activities-config@nls1729"
-  schemadir="$pkgdir/usr/share/glib-2.0"
-  install -d "$destdir" "$schemadir"
-  mv schemas "$schemadir"
-  mv * "$destdir"
+# template input; name=modularize-package
+# template input; name=install-code
+# template input; name=install-schemas
+# template input; name=install-locale
+
+package_09_icon() {
+  install -Dm644 *.svg "$destdir"
 }

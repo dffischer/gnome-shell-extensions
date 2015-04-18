@@ -19,10 +19,10 @@ build() {
   rm "schemas/gschemas.compiled"
 }
 
-package() {
-  destdir="$pkgdir/usr/share/gnome-shell/extensions"
-  schemadir="$pkgdir/usr/share/glib-2.0"
-  install -d "$destdir" "$schemadir"
-  mv "$_extname/schemas" "$schemadir"
-  mv "$_extname" "$destdir"
+# template input; name=modularize-package
+# template input; name=install-code
+# template input; name=install-schemas
+
+package_09_theme() {
+  cp -r --no-preserve=ownership,mode themes "$destdir"
 }

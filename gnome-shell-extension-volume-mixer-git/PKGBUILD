@@ -9,7 +9,6 @@ url="https://github.com/aleho/gnome-shell-volume-mixer"
 license=(GPLv2)
 depends=('gnome-shell>=3.12')
 makedepends=('git')
-install=gschemas.install
 source=("$pkgname::git+$url")
 md5sums=('SKIP')
 
@@ -18,11 +17,11 @@ pkgver() {
   echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
 }
 
-package () {
-  # TODO split locale, pautils to correct directories
-  cd $pkgname
-  destdir="$pkgdir/usr/share/gnome-shell/extensions/"
-  install -d "$destdir/schemas"
-  install *.js* "$destdir"
-  install schemas/gschemas.compiled "$destdir/schemas"
+# template input; name=modularize-package
+# template input; name=install-code
+# template input; name=install-schemas
+# template input; name=install-locale
+
+package_09_pautils() {
+  cp -r --no-preserve=ownership pautils "$destdir"
 }
