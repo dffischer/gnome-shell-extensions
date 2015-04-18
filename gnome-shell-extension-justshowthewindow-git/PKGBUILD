@@ -17,9 +17,5 @@ prepare() {
   sed -i '2s/]/, "3.12", "3.14", "3.16"]/' metadata.json
 }
 
-package () {
-  cd gnome-shell-extension-justshowthewindow
-  destdir=${pkgdir}/usr/share/gnome-shell/extensions/justshowthewindow@ryanlerch.org
-  install -d ${destdir}
-  mv extension.js metadata.json ${destdir}
-}
+# template input; name=modularize-package
+# template input; name=install-code

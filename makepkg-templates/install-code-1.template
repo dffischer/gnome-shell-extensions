@@ -1,12 +1,13 @@
 package_01_locate() {
   msg2 'Locating extension...'
-  extdir="$(find -name '*@*')"
-  cd "$extdir"
+  cd "$(dirname $(find -name 'metadata.json'))"
+  extname=$(grep -Po '(?<="uuid": ")[^"]*' metadata.json)
+  destdir="$pkgdir/usr/share/gnome-shell/extensions/$extname"
 }
 
 package_02_install() {
   msg2 'Installing extension code...'
-  install -Dm644 -t "$pkgdir/usr/share/gnome-shell/extensions/$(basename $extdir)" *.js*
+  install -Dm644 -t "$destdir" *.js*
 }
 
 # vim: filetype=sh

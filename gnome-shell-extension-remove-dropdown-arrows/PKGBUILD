@@ -11,10 +11,5 @@ depends=('gnome-shell>=3.10')
 source=("https://github.com/mpdeimos/gnome-shell-remove-dropdown-arrows/archive/version/${pkgver}.tar.gz")
 md5sums=('0491e2ccdf217b627b04159084580af6')
 
-package () {
-  cd gnome-shell-remove-dropdown-arrows-*
-  destdir="$pkgdir/usr/share/gnome-shell/extensions/$(grep -Po '(?<="uuid": ").*(?=")' metadata.json)"
-  rm LICENSE
-  install -d "$destdir"
-  mv * "$destdir"
-}
+# template input; name=modularize-package
+# template input; name=install-code

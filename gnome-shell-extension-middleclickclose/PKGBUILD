@@ -9,14 +9,9 @@ arch=(any)
 url='http://sourceforge.net/projects/buttons-to-panel/'
 license=(unknown)
 depends=('gnome-shell>=3.6')
-install=gschemas.install
 source=("${pkgname}.zip::http://sourceforge.net/projects/mt-miscellaneous/files/gnome-extensions/3.16/${_extname}.v6.shell-extension.zip/download")
 md5sums=('e7ea5800d8408ea33496cdac01a058f6')
 
-package() {
-  destdir="$pkgdir/usr/share/gnome-shell/extensions/$_extname"
-  schemadir="$pkgdir/usr/share/glib-2.0/schemas"
-  install -d "$destdir" "$schemadir"
-  cp *.js* "$destdir"
-  cp -r schemas/*.xml "$schemadir"
-}
+# template input; name=modularize-package
+# template input; name=install-code
+# template input; name=install-schemas

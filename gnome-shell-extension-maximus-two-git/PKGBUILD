@@ -16,9 +16,5 @@ pkgver() {
   echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
 }
 
-package() {
-  cd $pkgname
-  destdir="$pkgdir/usr/share/gnome-shell/extensions/maximus-two@wilfinitlike.gmail.com"
-  install -d "$destdir"
-  cp -r maximus-two-wilfinitlike.gmail.com/* "$destdir"
-}
+# template input; name=modularize-package
+# template input; name=install-code
