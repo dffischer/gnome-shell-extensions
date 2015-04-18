@@ -17,4 +17,6 @@ build() {
   sed -i '2s/]/, "3.10", "3.12", "3.14"]/' *@*/metadata.json
 }
 
-# template input; name=gnome-shell-extension-package
+# template input; name=modularize-package
+# template input; name=install-code
+# template input; name=install-schemas

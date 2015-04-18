@@ -1,0 +1,8 @@
+package() {
+  for function in $(declare -F | grep -Po 'package_[[:digit:]]+[[:alpha:]_]*$')
+  do
+    $function
+  done
+}
+
+# vim: filetype=sh
