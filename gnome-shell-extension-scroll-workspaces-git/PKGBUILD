@@ -18,14 +18,4 @@ pkgver() {
   echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
 }
 
-package () {
-  cd $pkgname
-  extdir="$(find -name '*@*.*')"
-  destdir="$pkgdir/usr/share/gnome-shell/extensions/$(basename $extdir)"
-  schemadir="$destdir/schemas"
-  install -d "$destdir" "$schemadir"
-
-  cd "$extdir"
-  install -m644 *.js* "$destdir"
-  install -m644 schemas/*.xml "$schemadir"
-}
+# template name=gnome-shell-extension-package;
