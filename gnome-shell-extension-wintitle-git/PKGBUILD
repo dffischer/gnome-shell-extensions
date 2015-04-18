@@ -24,9 +24,5 @@ prepare() {
   sed -i '6s/]/, "3.16"]/' metadata.json
 }
 
-package () {
-  cd "$_dirname"
-  destdir="$pkgdir/usr/share/gnome-shell/extensions/wintitle@megh"
-  install -d "$destdir"
-  mv * "$destdir"
-}
+# template input; name=modularize-package
+# template input; name=install-code
