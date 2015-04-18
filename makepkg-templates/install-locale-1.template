@@ -1,0 +1,12 @@
+package_10_locale() {
+  msg2 'Installing translations...'
+  (
+    cd locale
+    for locale in */
+    do
+      install -Dm644 -t "$pkgdir/usr/share/locale/$locale/LC_MESSAGES" "$locale/LC_MESSAGES"/*.mo
+    done
+  )
+}
+
+# vim: filetype=sh
