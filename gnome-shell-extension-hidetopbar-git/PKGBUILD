@@ -24,12 +24,7 @@ prepare() {
   sed -i '2s/]/, "3.16"]/' metadata.json
 }
 
-package() {
-  cd "$_dirname"
-  destdir="$pkgdir/usr/share/gnome-shell/extensions/hidetopbar@mathieu.bidon.ca"
-  schemadir="$pkgdir/usr/share/glib-2.0/schemas"
-  install -d "$destdir" "$schemadir"
-  rm README.md
-  mv *.xml "$schemadir"
-  mv * "$destdir"
-}
+# template input; name=modularize-package
+# template input; name=install-code
+# template input; name=install-schemas
+# template input; name=install-locale
