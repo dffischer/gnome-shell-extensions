@@ -1,3 +1,8 @@
+if [ -z "$install" ]
+then
+  install=gschemas.install
+fi
+
 package_10_schemas() {
   msg2 'Installing schemas...'
   install -Dm644 -t "$pkgdir/usr/share/glib-2.0/schemas" schemas/*.xml

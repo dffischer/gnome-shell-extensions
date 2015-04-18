@@ -9,7 +9,6 @@ url="https://github.com/dfischer/gnome-shell-scroll-workspaces/"
 license=(GPLv2)
 depends=('gnome-shell>=3.8')
 makedepends=('git')
-install=gschemas.install
 source=("$pkgname::git+$url#branch=conveniencejs")
 md5sums=('SKIP')
 
