@@ -1,0 +1,32 @@
+# Maintainer: XZS <d dot f dot fischer at web dot de>
+
+pkgname="gnome-shell-extension-wintitle-git"
+_dirname=wintitle
+pkgdesc="Shows the title of window when scrolled on the appMenu button."
+pkgver=15.cd6d96f
+pkgrel=1
+arch=(any)
+url="https://github.com/meghprkh/wintitle"
+license=(GPLv2)
+depends=('gnome-shell>=3.4')
+makedepends=('git')
+source=('git+https://github.com/meghprkh/wintitle/')
+md5sums=('SKIP')
+
+pkgver() {
+  cd "$_dirname"
+  echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
+}
+
+prepare() {
+  # gnome-shell 3.16 is not officially supported.
+  cd "$_dirname"
+  sed -i '6s/]/, "3.16"]/' metadata.json
+}
+
+package () {
+  cd "$_dirname"
+  destdir="$pkgdir/usr/share/gnome-shell/extensions/wintitle@megh"
+  install -d "$destdir"
+  mv * "$destdir"
+}
