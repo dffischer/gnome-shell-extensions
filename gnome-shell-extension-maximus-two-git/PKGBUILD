@@ -8,13 +8,7 @@ arch=(any)
 url='https://github.com/johnhoran/GnomeExtensionMaximusTwo'
 license=(GPLv3)
 depends=('gnome-shell>=3.8' 'xorg-xprop')
-source=("$pkgname::git+$url")
-md5sums=('SKIP')
 
-pkgver() {
-  cd $pkgname
-  echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
-}
-
+# template input; name=git
 # template input; name=modularize-package
 # template input; name=install-code

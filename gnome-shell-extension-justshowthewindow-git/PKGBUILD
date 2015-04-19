@@ -2,19 +2,18 @@
 
 pkgname='gnome-shell-extension-justshowthewindow-git'
 pkgdesc="Rather than the default gnome-shell behaviour of showing a notification that a window is ready, the window is just displayed"
-pkgver=1
-pkgrel=4
+pkgver=2.275595c
+pkgrel=1
 arch=(any)
 depends=('gnome-shell>=3.6')
 license=(GPLv2)
 url="https://github.com/ryanlerch/gnome-shell-extension-justshowthewindow"
-source=('git+https://github.com/ryanlerch/gnome-shell-extension-justshowthewindow')
-md5sums=('SKIP')
+
+# template input; name=git
 
 prepare() {
   # gnome-shell 3.12 and higher are not officially supported.
-  cd "$pkgname"
-  sed -i '2s/]/, "3.12", "3.14", "3.16"]/' metadata.json
+  sed -i '2s/]/, "3.12", "3.14", "3.16"]/' $pkgname/metadata.json
 }
 
 # template input; name=modularize-package

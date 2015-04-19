@@ -8,15 +8,8 @@ arch=(any)
 url="https://github.com/aleho/gnome-shell-volume-mixer"
 license=(GPLv2)
 depends=('gnome-shell>=3.12')
-makedepends=('git')
-source=("$pkgname::git+$url")
-md5sums=('SKIP')
 
-pkgver() {
-  cd $pkgname
-  echo $(git rev-list --count HEAD).$(git rev-parse --short HEAD)
-}
-
+# template input; name=git
 # template input; name=modularize-package
 # template input; name=install-code
 # template input; name=install-schemas
