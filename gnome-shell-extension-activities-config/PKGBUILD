@@ -48,6 +48,7 @@ build() {
 # template input; name=install-code
 # template input; name=install-schemas
 # template input; name=install-locale
+# template input; name=unify-conveniencejs
 
 package_09_icon() {
   install -Dm644 *.svg "$destdir"

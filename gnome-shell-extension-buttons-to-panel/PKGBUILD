@@ -20,6 +20,7 @@ prepare() {
 # template input; name=modularize-package
 # template input; name=install-code
 # template input; name=install-schemas
+# template input; name=unify-conveniencejs
 
 package_09_theme() {
   cp -r --no-preserve=ownership,mode themes "$destdir"

@@ -1,0 +1,9 @@
+depends+=(gnome-shell-extensions)
+
+package_03_unify_conveniencejs() {
+  ln -fs \
+    ../user-theme@gnome-shell-extensions.gcampax.github.com/convenience.js \
+    "$destdir/convenience.js"
+}
+
+# vim: filetype=sh
