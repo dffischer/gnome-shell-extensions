@@ -2,7 +2,7 @@
 
 pkgname="gnome-shell-extension-scroll-workspaces-git"
 pkgdesc="Switch workspaces by scrolling in the top panel"
-pkgver=32.bd97630
+pkgver=r33.5a65b90
 pkgrel=1
 arch=(any)
 url="http://github.com/dffischer/gnome-shell-scroll-workspaces#branch=conveniencejs"

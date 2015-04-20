@@ -2,7 +2,7 @@
 
 pkgname='gnome-shell-extension-justshowthewindow-git'
 pkgdesc="Rather than the default gnome-shell behaviour of showing a notification that a window is ready, the window is just displayed"
-pkgver=2.275595c
+pkgver=r2.275595c
 pkgrel=1
 arch=(any)
 depends=('gnome-shell>=3.6')

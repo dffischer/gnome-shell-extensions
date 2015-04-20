@@ -2,7 +2,7 @@
 
 pkgname="gnome-shell-extension-volume-mixer-git"
 pkgdesc="Applet allowing separate configuration of pulseaudio mixers"
-pkgver=30.b9bbf3d
+pkgver=0.9.r0.g3e7a459
 pkgrel=1
 arch=(any)
 url="https://github.com/aleho/gnome-shell-volume-mixer"

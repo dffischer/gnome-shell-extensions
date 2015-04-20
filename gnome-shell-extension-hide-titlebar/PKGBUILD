@@ -3,7 +3,7 @@
 pkgname='gnome-shell-extension-hide-titlebar'
 pkgdesc="Allows to hide the titlebars of maximized windows"
 pkgver=1
-pkgrel=5
+pkgrel=6
 arch=(any)
 url='http://sourceforge.net/projects/hide-titlebar/'
 license=(GPLv2)
