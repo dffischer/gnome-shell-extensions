@@ -21,3 +21,5 @@ Simple version updates are only checked in on important upstream changes. Please
 - [README.md](README.md) is the document you are reading right now.
 
 - all other directories package one extension each.
+
+Apart from expanding the templates, this repository should exactly mirror the state of the packages in the AUR.
