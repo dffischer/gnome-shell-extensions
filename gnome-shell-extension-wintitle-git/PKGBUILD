@@ -10,11 +10,6 @@ license=(GPLv2)
 depends=('gnome-shell>=3.4')
 
 # template input; name=git
-
-prepare() {
-  # gnome-shell 3.16 is not officially supported.
-  sed -i '6s/]/, "3.16"]/' $pkgname/metadata.json
-}
-
+# template input; name=adjust-version
 # template input; name=modularize-package
 # template input; name=install-code

@@ -11,12 +11,7 @@ depends=('gnome-shell>=3.8')
 install=gschemas-and-warn.install
 
 # template input; name=git
-
-prepare() {
-  # gnome-shell 3.16 is not officially supported.
-  sed -i '2s/]/, "3.16"]/' $pkgname/metadata.json
-}
-
+# template input; name=adjust-version
 # template input; name=modularize-package
 # template input; name=install-code
 # template input; name=install-schemas

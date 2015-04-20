@@ -10,11 +10,6 @@ license=(GPLv2)
 url="https://github.com/ryanlerch/gnome-shell-extension-justshowthewindow"
 
 # template input; name=git
-
-prepare() {
-  # gnome-shell 3.12 and higher are not officially supported.
-  sed -i '2s/]/, "3.12", "3.14", "3.16"]/' $pkgname/metadata.json
-}
-
+# template input; name=adjust-version
 # template input; name=modularize-package
 # template input; name=install-code
