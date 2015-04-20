@@ -7,7 +7,7 @@ pkgrel=5
 arch=(any)
 url='http://sourceforge.net/projects/hide-titlebar/'
 license=(GPLv2)
-depends=('gnome-shell>=3.4' 'gnome-shell<=3.14' 'xorg-xprop')
+depends=('gnome-shell>=3.4' 'gnome-shell<3.15' 'xorg-xprop')
 install=gschemas-and-warn.install
 source=("${pkgname}.zip::http://sourceforge.net/projects/hide-titlebar/files/latest/download")
 md5sums=('835eb02de1edb99c6c715570ea45c6e3')

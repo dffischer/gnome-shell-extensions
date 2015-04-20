@@ -7,7 +7,7 @@ pkgrel=3
 arch=(any)
 url='http://sourceforge.net/projects/buttons-to-panel/'
 license=(GPLv2)
-depends=('gnome-shell>=3.4' 'gnome-shell<=3.14')
+depends=('gnome-shell>=3.4' 'gnome-shell<3.15')
 install=gschemas-and-warn.install
 source=("${pkgname}.zip::http://sourceforge.net/projects/buttons-to-panel/files/latest/download")
 md5sums=('ed4df64545666f4472d4b50f3e510a38')
