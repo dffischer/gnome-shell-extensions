@@ -16,6 +16,8 @@ Simple version updates are only checked in on important upstream changes. Please
 
 - [gschemas.install](gschemas.install) is the install script utilized by all extensions that install glib schemas. The [corresponding template](makepkg-templates/install-schemas.template) automatically adds it, but as a PKGBUILD can not pull in something from outside its own directory, so it also has to be linked into the package directory.
 
+- [build.sh](build.sh) can be used to build packages without expanding their templates. The script does this by compiling the package and source in a subdirectory of `/tmp/build-packages`. The results will be moved back to the original location. Version changes caused by a `pkgver` function also propagate.
+
 - [README.md](README.md) is the document you are reading right now.
 
 - all other directories package one extension each.
