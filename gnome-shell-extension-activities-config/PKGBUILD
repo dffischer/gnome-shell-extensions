@@ -29,15 +29,16 @@ pkgver() {
 
 prepare() {
   find_version
-  curl -Lo extension.zip "https://extensions.gnome.org/review/download/$(tail -n1 version).shell-extension.zip"
-  unzip -d extension extension.zip
+  local name=$(tail -n1 version).shell-extension.zip
+  if [ ! -f $name ]
+  then
+    curl -LO "https://extensions.gnome.org/review/download/$name"
+    unzip -od extension $name
+  fi
 }
 
 build() {
   cd extension
-  rm face-smile-3.svg schemas/gschemas.compiled
-  chmod 644 metadata.json
-  find -type d -exec chmod 755 {} \;
   sed -i '/^const ICON_FILE =.*$/{
     s|face-smile-3.svg|archlinux-logo-gray-scalable.svg|;
     s|//.*|// Arch Linux Icon.|}' keys.js
