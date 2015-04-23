@@ -1,0 +1,6 @@
+PKGBUILD.expanded
+*.src.tar*
+*.pkg.tar*
+*/*/
+*.zip
+*.html

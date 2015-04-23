@@ -16,7 +16,9 @@ Simple version updates are only checked in on important upstream changes. Please
 
 - [gschemas.install](gschemas.install) is the install script utilized by all extensions that install glib schemas. The [corresponding template](makepkg-templates/install-schemas.template) automatically adds it, but as a PKGBUILD can not pull in something from outside its own directory, so it also has to be linked into the package directory.
 
-- [build.sh](build.sh) can be used to build packages without expanding their templates. The script does this by compiling the package and source in a subdirectory of `/tmp/build-packages`. The results will be moved back to the original location. Version changes caused by a `pkgver` function also propagate.
+- [build.sh](build.sh) can be used to build packages without touching their template declarations. The script does this by substituting the templates in a file `PKGBUILD.expanded` which is then used to compile the package and source tarball. Version changes caused by a `pkgver` function propagate back to the original.
+
+- A [.gitignore](.gitignore) file excludes all intermediate products, packages and source aurballs created when building packages and preparing them for upload to the AUR.
 
 - [README.md](README.md) is the document you are reading right now.
 
