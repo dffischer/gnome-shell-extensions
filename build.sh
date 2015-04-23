@@ -3,7 +3,7 @@
 if [ "$1" = "-h" ]
 then
   echo "usage: $0 [package...]"
-  echo 'builds the given packages, or the one found in the current directory,' \
+  echo 'builds the given packages, or all found below the current directory,' \
     'with makepkg-template in a temporary directory, leaving the original' \
     'intact apart from the version numbers and moves the source package back.'
   echo 'Templates are taken from a makepkg-templates directory found besides this script.'
@@ -12,7 +12,7 @@ then
   exit
 fi
 
-for dir in ${@-.}
+for dir in ${@:-$(find -iname PKGBUILD -printf "%h\n")}
 do
   if [ ! -r "$dir/PKGBUILD" ]
   then
