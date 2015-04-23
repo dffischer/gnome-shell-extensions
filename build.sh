@@ -9,19 +9,26 @@ then
   exit
 fi
 
+templates="--template-dir $(realpath ${BASH_SOURCE[@]%%/*})/makepkg-templates"
 for dir in ${@:-$(find -iname PKGBUILD -printf "%h\n")}
 do
   if [ ! -r "$dir/PKGBUILD" ]
   then
     echo "$dir does not contain any PKGBUILD"
-  else
-    makepkg-template -p $dir/PKGBUILD -o "$dir/PKGBUILD.expanded" --template-dir ${BASH_SOURCE[@]%%/*}/makepkg-templates
-    ( cd "$dir" ; makepkg -fp PKGBUILD.expanded ; mkaurball -fp PKGBUILD.expanded )
-    oldpkgver=$(grep -Po '(?<=^pkgver=)[^ ]*' "$dir/PKGBUILD")
-    newpkgver=$(grep -Po '(?<=^pkgver=)[^ ]*' "$dir/PKGBUILD.expanded")
+  else (
+    cd "$dir"
+
+    # build
+    makepkg-template -o PKGBUILD.expanded $templates
+    makepkg -fp PKGBUILD.expanded
+    mkaurball -fp PKGBUILD.expanded
+
+    # propagate changed pkgver
+    oldpkgver=$(grep -Po '(?<=^pkgver=)[^ ]*' PKGBUILD)
+    newpkgver=$(grep -Po '(?<=^pkgver=)[^ ]*' PKGBUILD.expanded)
     if [ $newpkgver != $oldpkgver ]
     then
-      sed --follow-symlinks -i "s:^pkgver=[^ ]*:pkgver=$newpkgver:;s:^pkgrel=[^ ]*:pkgrel=1:" "$dir/PKGBUILD"
+      sed --follow-symlinks -i "s:^pkgver=[^ ]*:pkgver=$newpkgver:;s:^pkgrel=[^ ]*:pkgrel=1:" PKGBUILD
     fi
-  fi
+  ) fi
 done
