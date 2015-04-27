@@ -9,7 +9,7 @@ then
   exit
 fi
 
-templates="--template-dir $(realpath ${BASH_SOURCE[@]%%/*})/makepkg-templates"
+templates="--template-dir /usr/share/makepkg-template --template-dir $(realpath ${BASH_SOURCE[@]%%/*})/makepkg-templates"
 for dir in ${@:-$(find -iname PKGBUILD -printf "%h\n")}
 do
   if [ ! -r "$dir/PKGBUILD" ]
