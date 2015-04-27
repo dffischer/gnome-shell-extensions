@@ -18,8 +18,11 @@ do
   else (
     cd "$dir"
 
-    # build
+    # expand and clean
     makepkg-template -o PKGBUILD.expanded $templates
+    sed -i '/# \(template\|vim\)/d' PKGBUILD.expanded
+
+    # build
     makepkg -fp PKGBUILD.expanded
     mkaurball -fp PKGBUILD.expanded
 
