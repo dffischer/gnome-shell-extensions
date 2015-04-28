@@ -6,9 +6,9 @@ prepare() {
   then
     max=$(gnome-shell --version | grep -Po '(?<=GNOME Shell 3\.)[[:digit:]]+')
   fi
-  sed -i 'H;1h;$!d;x;
-    s/"shell-version": \[.*\]/"shell-version": [ '"$(seq -s ', ' -f '"3.%g"' $min 2 $max)"' ]/'\
-      */metadata.json
+  find -name 'metadata.json' -exec sed -i 'H;1h;$!d;x;
+    s/"shell-version": \[.*\]/"shell-version": [ '"$(seq -s ', ' -f '"3.%g"' $min 2 $max)"' ]/' \
+    '{}' +
 }
 
 # vim: filetype=sh
