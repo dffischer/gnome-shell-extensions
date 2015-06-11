@@ -7,9 +7,9 @@ pkgrel=1
 arch=(any)
 url="http://github.com/dffischer/gnome-shell-scroll-workspaces#branch=conveniencejs"
 license=(GPLv2)
-depends=('gnome-shell>=3.8')
 
 # template input; name=git
+# template input; name=find-version
 # template input; name=modularize-package
 # template input; name=install-code
 # template input; name=install-schemas
