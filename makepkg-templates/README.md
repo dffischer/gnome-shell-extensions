@@ -8,7 +8,7 @@ All templates end with a version number which should be increased on major chang
 
 - [find-versions](find-versions.template) adds _gnome-shell_ to the dependencies, restricted to the versions parsed from the `metadata.json`.
 
-  As this file has to be present in `$srcdir`, the `.SRCINFO` of `PKGBUILD`s utilizing this template can only be correctly generated after the sources are downloaded and extracted. It is advised to run `makepkg` to compile the package before executing `makepkg -S`, `makeaurball`, `mksrcinfo` or anything alike.
+  As this file has to be present in `$srcdir`, the `.SRCINFO` of `PKGBUILD`s utilizing the version range can only be correctly generated after the sources are downloaded and extracted. If the `metadata.json` is not yet present, the package will be configured to be dependend on _gnome-shell_ independent of any version. It is advised to run `makepkg` to compile the package before executing `makepkg -S`, `makeaurball`, `mksrcinfo` or anything alike.
 
 - [gnome-shell-version](gnome-shell-version.template) is a small snippet that spits out the currently installed version of gnome-shell. It is used in the former two templates.
 
