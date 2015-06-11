@@ -6,6 +6,8 @@ All templates end with a version number which should be increased on major chang
 
 - [adjust-version](adjust-version.template) contains a `prepare` function that modifies the `metadata.json` of an extension to be exactly compatible with the gnome-shell versions the `depends` array specifies. It is used to make the package installable with versions that are not officially supported by the developer, which mostly happens because the extension is not actively maintained any more. If the functionality is known to be restricted under certain versions, the package should tell so in the post_install and post_upgrade hooks of its installer script.
 
+- [gnome-shell-version](gnome-shell-version.template) is a small snippet that spits out the currently installed version of gnome-shell. It is used in the former two templates.
+
 - [modularize-package](modularize-package.template) sets up a modular `package` function that will call all functions of the naming pattern `package_<number>_<name>` in order. Multiple of these package functions may have the same numbers. They will then be called in alphabetical order. Inclusion of this template is needed to use any of the remaining templates.
 
 - [install-code](install-code.template) installs the extension code. It is most probably always used and uses numbers below `05` in its function names so that these are called first. They set up the variable `$destdir` pointing to the root directory of the extension. It can be used to install additional content to there. As all other installation templates use numbers `10` and up, numbers `05` to `10` are recommended for this purpose.
