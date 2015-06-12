@@ -1,4 +1,5 @@
 # Maintainer: XZS <d dot f dot fischer at web dot de>
+# template input; name=github
 
 pkgname="gnome-shell-extension-scroll-workspaces-git"
 pkgdesc="Switch workspaces by scrolling in the top panel"

@@ -1,5 +1,6 @@
 # Maintainer: XZS <d dot f dot fischer at web dot de>
 # Contributor: Alucryd <alucryd at gmail dot com>
+# template input; name=github
 
 pkgname=gnome-shell-extension-coverflow-alt-tab-git
 pkgver=1.0.r0.g9d333a9

@@ -1,4 +1,5 @@
 # Maintainer: XZS <d dot f dot fischer at web dot de>
+# template input; name=github
 
 pkgname='gnome-shell-extension-hidetopbar-git'
 pkgdesc="Gnome 3 extension to hide the top bar except in overview mode"
