@@ -7,7 +7,7 @@
 pkgname=gnome-shell-extension-dash-to-dock
 pkgver=49
 pkgrel=1
-pkgdesc="A gnome-shell extension that transforms the dash into an intellihide dock"
+pkgdesc="move the dash out of the overview transforming it in a dock for an easier launching of applications and a faster switching between windows and desktops"
 arch=('any')
 url="https://micheleg.github.io/dash-to-dock/"
 license=('GPL')
