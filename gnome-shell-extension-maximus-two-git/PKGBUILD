@@ -9,6 +9,7 @@ arch=(any)
 url='https://github.com/johnhoran/GnomeExtensionMaximusTwo'
 license=(GPLv3)
 depends=('xorg-xprop' 'wmctrl')
+install=notice.install
 
 # template input; name=git
 # template input; name=find-version
