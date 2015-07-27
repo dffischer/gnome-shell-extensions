@@ -1,5 +1,8 @@
-# Maintainer: Janne Haapsaari <haaja@iki.fi>
+# Maintainer: XZS <d dot f dot fischer at web dot de>
+# Contributor: Janne Haapsaari <haaja@iki.fi>
 # Contributor: Christopher Krooß <didi2002 at web.de>
+# template input; name=github
+
 pkgname=gnome-shell-extension-dash-to-dock
 pkgver=v46
 pkgrel=2
