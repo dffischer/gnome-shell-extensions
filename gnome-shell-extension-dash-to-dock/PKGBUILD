@@ -15,6 +15,8 @@ makedepends=('intltool')
 source=("https://github.com/micheleg/dash-to-dock/archive/extensions.gnome.org-v${pkgver}.tar.gz")
 md5sums=('f085cee5b4373029a00d7987081d1d5d')
 
+# template input; name=find-version
+
 build() {
   cd */
   make _build

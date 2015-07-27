@@ -15,6 +15,7 @@ depends=('dconf')
 makedepends=('intltool')
 
 # template input; name=git
+# template input; name=find-version
 
 build() {
   cd "$_gitname"
