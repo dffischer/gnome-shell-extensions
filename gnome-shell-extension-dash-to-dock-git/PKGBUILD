@@ -12,8 +12,7 @@ url="https://github.com/micheleg/dash-to-dock/"
 license=('GPL')
 depends=('dconf')
 makedepends=('git' 'intltool')
-conflicts=('gnome-shell-extensions-git'
-           'gnome-shell-extension-dash-to-dock')
+conflicts=('gnome-shell-extension-dash-to-dock')
 provides=('gnome-shell-extension-dash-to-dock-git')
 source=("$pkgname"::'git+https://github.com/micheleg/dash-to-dock.git')
 md5sums=('SKIP')
