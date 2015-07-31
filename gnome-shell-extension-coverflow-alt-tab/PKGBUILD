@@ -9,8 +9,21 @@ arch=('any')
 url="https://github.com/dmo60/CoverflowAltTab"
 license=('GPL')
 makedepends=(jq)
-source=("$url/releases/download/v1.0/CoverflowAltTab-${pkgver}.zip")
-md5sums=('548132e8788ca6b1b79027a12a12b770')
+source=("release::https://api.github.com/releases/dmo60/CoverflowAltTab")
+md5sums=('SKIP')
+
+prepare() {
+  local url="$(jq -r '.assets[0].browser_download_url' release)"
+  local archive="${url##*/}"
+  if [ ! -e "$archive" ]; then
+    curl -Lo "$archive" "$url"
+  fi
+  unzip -o "$archive"
+}
+
+pkgver() {
+  jq -r .tag_name release | grep -o '[[:digit:].]*'
+}
 
 # template input; name=find-version
 # template input; name=modularize-package
