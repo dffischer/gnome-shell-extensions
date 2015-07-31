@@ -8,23 +8,8 @@ pkgdesc="Replacement of Alt-Tab, iterates through windows in a cover-flow manner
 arch=('any')
 url="https://github.com/dmo60/CoverflowAltTab"
 license=('GPL')
-makedepends=(jq)
-source=("release::https://api.github.com/releases/dmo60/CoverflowAltTab")
-md5sums=('SKIP')
 
-prepare() {
-  local url="$(jq -r '.assets[0].browser_download_url' release)"
-  local archive="${url##*/}"
-  if [ ! -e "$archive" ]; then
-    curl -Lo "$archive" "$url"
-  fi
-  unzip -o "$archive"
-}
-
-pkgver() {
-  jq -r .tag_name release | grep -o '[[:digit:].]*'
-}
-
+# template input; name=source-github-release
 # template input; name=find-version
 # template input; name=modularize-package
 # template input; name=install-code

@@ -4,6 +4,8 @@ Comments in the template code are not stripped when they are input and thus woul
 
 All templates end with a version number which should be increased on major changes. There always exists a symbolic link to the newest version, lacking any number.
 
+- [source-github-release](source-github-release.template) downloads the last release from GitHub and generates a version number looking at its tag. The location is generated from a `$url` pointing to the homepage of the repository, which can be overwritten by setting a `$_giturl` pointing to the latest release GitHub API location before including the template.
+
 - [adjust-version](adjust-version.template) contains a `prepare` function that modifies the `metadata.json` of an extension to be exactly compatible with the gnome-shell versions the `depends` array specifies. It is used to make the package installable with versions that are not officially supported by the developer, which mostly happens because the extension is not actively maintained any more. If the functionality is known to be restricted under certain versions, the package should tell so in the post_install and post_upgrade hooks of its installer script.
 
 - [find-versions](find-versions.template) adds _gnome-shell_ to the dependencies, restricted to the versions parsed from the `metadata.json`.
