@@ -1,7 +1,7 @@
 # Maintainer: XZS <d dot f dot fischer at web dot de>
 # template input; name=github
 
-pkgname='gnome-shell-extension-buttons-to-panel'
+pkgname=gnome-shell-extension-buttons-to-panel
 pkgver=1
 pkgrel=4
 pkgdesc="Shows the window buttons of the focused window in the GNOME top panel"

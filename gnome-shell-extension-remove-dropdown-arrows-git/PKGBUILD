@@ -1,7 +1,7 @@
 # Maintainer: XZS <d dot f dot fischer at web dot de>
 # template input; name=github
 
-pkgname="gnome-shell-extension-remove-dropdown-arrows-git"
+pkgname=gnome-shell-extension-remove-dropdown-arrows-git
 pkgver=5.r0.g7d42ad1
 pkgrel=1
 pkgdesc="Removes the dropdown arrows from the AppMenu and SystemMenu (AggregateMenu) which were introduced in Gnome 3.10."
