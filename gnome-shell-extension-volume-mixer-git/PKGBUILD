@@ -3,7 +3,7 @@
 # template input; name=github
 
 pkgname=gnome-shell-extension-volume-mixer-git
-pkgver=0.9.r0.g3e7a459
+pkgver=0.9.1
 pkgrel=1
 pkgdesc="Applet allowing separate configuration of pulseaudio mixers"
 arch=(any)
