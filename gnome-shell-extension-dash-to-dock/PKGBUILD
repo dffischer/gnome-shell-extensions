@@ -15,8 +15,6 @@ makedepends=('intltool')
 source=("https://micheleg.github.io/dash-to-dock/releases.html")
 md5sums=('SKIP')
 
-# template input; name=find-version
-
 pkgver() {
   grep -Pom1 '(?<=Version )[[:digit:]]+' releases.html
 }
@@ -32,9 +30,11 @@ prepare() {
 
 # template input; name=modularize-package
 # template input; name=install-code
-# template input; name=install-schemas
-# template input; name=install-locale
 
 package_09_media() {
   cp -r --no-preserve=ownership,mode media "$destdir"
 }
+
+# template input; name=install-locale
+# template input; name=install-schemas
+# template input; name=find-version

@@ -12,6 +12,6 @@ depends=('xorg-xprop' 'wmctrl')
 install=notice.install
 
 # template input; name=git
-# template input; name=find-version
 # template input; name=modularize-package
 # template input; name=install-code
+# template input; name=find-version

@@ -16,7 +16,6 @@ depends=('dconf')
 makedepends=('intltool')
 
 # template input; name=git
-# template input; name=find-version
 
 build() {
   cd "$_gitname"
@@ -25,9 +24,11 @@ build() {
 
 # template input; name=modularize-package
 # template input; name=install-code
-# template input; name=install-schemas
-# template input; name=install-locale
 
 package_09_media() {
   cp -r --no-preserve=ownership,mode media "$destdir"
 }
+
+# template input; name=install-locale
+# template input; name=install-schemas
+# template input; name=find-version

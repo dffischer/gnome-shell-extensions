@@ -11,12 +11,13 @@ url="https://github.com/aleho/gnome-shell-volume-mixer"
 license=(GPLv2)
 
 # template input; name=git
-# template input; name=find-version
 # template input; name=modularize-package
 # template input; name=install-code
-# template input; name=install-schemas
-# template input; name=install-locale
 
 package_09_pautils() {
   cp -r --no-preserve=ownership pautils "$destdir"
 }
+
+# template input; name=install-locale
+# template input; name=install-schemas
+# template input; name=find-version
