@@ -9,7 +9,6 @@ pkgdesc='A mediaplayer indicator for the Gnome Shell'
 arch=('any')
 url='https://github.com/eonpatapon/gnome-shell-extensions-mediaplayer'
 license=('GPL2')
-depends=('gnome-shell')
 makedepends=('gnome-common' 'intltool')
 optdepends=('mpdris2-git: MPD support')
 install=gschemas.install
@@ -23,7 +22,10 @@ build() {
   make
 }
 
-package() {
+# template input; name=modularize-package
+# template input; name=find-version
+
+package_01_make_install() {
   cd "$_gitname"
   make DESTDIR="${pkgdir}" install
 }
