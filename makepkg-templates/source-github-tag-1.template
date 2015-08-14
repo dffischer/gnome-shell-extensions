@@ -1,0 +1,18 @@
+makedepends+=(jq)
+source+=("tags::${_giturl:-${url/github.com/api.github.com\/repos}/tags}")
+md5sums+=('SKIP')
+
+prepare() {
+  local url="$(jq -r '.[0].tarball_url' tags)"
+  local archive="${url##*/}"
+  if [ ! -e "$archive" ]; then
+    curl -Lo "$archive" "$url"
+  fi
+  tar xf "$archive"
+}
+
+pkgver() {
+  jq -r '.[0].name' tags | grep -o '[[:digit:].]*$'
+}
+
+# vim: filetype=sh
