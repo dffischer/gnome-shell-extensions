@@ -8,9 +8,9 @@ pkgdesc="Extension which puts minimize, maximize and close buttons in the top pa
 arch=('any')
 url="https://github.com/danielkza/Gnome-Shell-Window-Buttons-Extension"
 license=('GPL3')
-depends=('gnome-shell>=3.4' 'gnome-shell<3.15')
 
 # template input; name=git
+# template input; name=find-version
 # template input; name=modularize-package
 # template input; name=install-code
 # template input; name=install-schemas

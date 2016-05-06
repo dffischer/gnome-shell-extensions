@@ -7,8 +7,9 @@ pkgrel=1
 arch=(any)
 url='https://github.com/johnhoran/GnomeExtensionMaximusTwo'
 license=(GPLv3)
-depends=('gnome-shell>=3.8' 'xorg-xprop')
+depends=('xorg-xprop')
 
 # template input; name=git
+# template input; name=find-version
 # template input; name=modularize-package
 # template input; name=install-code

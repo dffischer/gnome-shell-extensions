@@ -6,6 +6,10 @@ All templates end with a version number which should be increased on major chang
 
 - [adjust-version](adjust-version.template) contains a `prepare` function that modifies the `metadata.json` of an extension to be exactly compatible with the gnome-shell versions the `depends` array specifies. It is used to make the package installable with versions that are not officially supported by the developer, which mostly happens because the extension is not actively maintained any more. If the functionality is known to be restricted under certain versions, the package should tell so in the post_install and post_upgrade hooks of its installer script.
 
+- [find-version](find-version.template) adds _gnome-shell_ to the dependencies, restricted to the versions parsed from the `metadata.json`.
+
+  As this file has to be present in `$srcdir`, the `.SRCINFO` of `PKGBUILD`s utilizing this template can only be correctly generated after the sources are downloaded and extracted. It is advised to run `makepkg` to compile the package before executing `makepkg -S`, `makeaurball`, `mksrcinfo` or anything alike.
+
 - [gnome-shell-version](gnome-shell-version.template) is a small snippet that spits out the currently installed version of gnome-shell. It is used in the former two templates.
 
 - [modularize-package](modularize-package.template) sets up a modular `package` function that will call all functions of the naming pattern `package_<number>_<name>` in order. Multiple of these package functions may have the same numbers. They will then be called in alphabetical order. Inclusion of this template is needed to use any of the remaining templates.
