@@ -2,14 +2,13 @@
 
 pkgname="gnome-shell-extension-wintitle-git"
 pkgdesc="Shows the title of window when scrolled on the appMenu button."
-pkgver=r15.cd6d96f
+pkgver=r16.63bd614
 pkgrel=1
 arch=(any)
 url="https://github.com/meghprkh/wintitle"
 license=(GPLv2)
-depends=('gnome-shell>=3.4')
 
 # template input; name=git
-# template input; name=adjust-version
+# template input; name=find-version
 # template input; name=modularize-package
 # template input; name=install-code
