@@ -2,7 +2,7 @@
 # template input; name=github
 
 pkgname=gnome-shell-extension-stealmyfocus-git
-pkgver=r13
+pkgver=3
 pkgrel=1
 pkgdesc="Shell Extension that let window that demand attention to steal focus"
 arch=(any)
@@ -11,7 +11,7 @@ replaces=('gnome-shell-extension-justshowthewindow')
 url="https://github.com/v-dimitrov/gnome-shell-extension-stealmyfocus"
 install=notice.install
 
-# template input; name=git
+# template input; name=source-git-json
 # template input; name=find-version
 # template input; name=modularize-package
 # template input; name=install-code
