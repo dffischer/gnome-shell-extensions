@@ -8,6 +8,7 @@ pkgrel=1
 arch=(any)
 url="https://github.com/mpdeimos/gnome-shell-remove-dropdown-arrows"
 license=(GPLv3)
+install=notice.install
 
 # template input; name=git
 # template input; name=find-version

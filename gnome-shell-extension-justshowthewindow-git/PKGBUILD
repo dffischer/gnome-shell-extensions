@@ -9,6 +9,7 @@ arch=(any)
 depends=('gnome-shell>=3.6')
 license=(GPLv2)
 url="https://github.com/ryanlerch/gnome-shell-extension-justshowthewindow"
+install=notice.install
 
 # template input; name=git
 # template input; name=adjust-version
