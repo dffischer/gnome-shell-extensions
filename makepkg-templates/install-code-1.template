@@ -1,6 +1,6 @@
 package_01_locate() {
   msg2 'Locating extension...'
-  cd "$(dirname $(find -name 'metadata.json'))"
+  cd "$(dirname $(find -name 'metadata.json' -print -quit))"
   extname=$(grep -Po '(?<="uuid": ")[^"]*' metadata.json)
   destdir="$pkgdir/usr/share/gnome-shell/extensions/$extname"
 }

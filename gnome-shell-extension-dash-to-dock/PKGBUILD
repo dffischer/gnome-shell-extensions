@@ -14,20 +14,20 @@ depends=('dconf')
 makedepends=('intltool')
 source=("$pkgname::https://github.com/micheleg/dash-to-dock/archive/extensions.gnome.org-${pkgver}.tar.gz")
 md5sums=('f085cee5b4373029a00d7987081d1d5d')
-install='gschemas.install'
 
 _archivename="dash-to-dock-extensions.gnome.org-${pkgver}"
 
 
 build() {
   cd "$srcdir/$_archivename"
-  make
+  make _build
 }
 
-package() {
-  cd "$srcdir/$_archivename"
-  mkdir -p "${pkgdir}/usr/share/gnome-shell/extensions" "${pkgdir}/usr/share/glib-2.0/schemas/"
-  make INSTALLBASE=${pkgdir}/usr/share/gnome-shell/extensions install
-  install -m644 "schemas/org.gnome.shell.extensions.dash-to-dock.gschema.xml" \
-    "${pkgdir}/usr/share/glib-2.0/schemas/org.gnome.shell.extensions.dash-to-dock.gschema.xml"
+# template input; name=modularize-package
+# template input; name=install-code
+# template input; name=install-schemas
+# template input; name=install-locale
+
+package_09_media() {
+  cp -r --no-preserve=ownership,mode media "$destdir"
 }

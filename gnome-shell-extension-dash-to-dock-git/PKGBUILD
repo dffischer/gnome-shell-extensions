@@ -12,19 +12,19 @@ url="https://github.com/micheleg/dash-to-dock/"
 license=('GPL')
 depends=('dconf')
 makedepends=('intltool')
-install="gschemas.install"
 
 # template input; name=git
 
 build() {
   cd "$_gitname"
-  make
+  make _build
 }
 
-package() {
-  cd "$_gitname"
-  mkdir -p "${pkgdir}/usr/share/gnome-shell/extensions" "${pkgdir}/usr/share/glib-2.0/schemas/"
-  make INSTALLBASE=${pkgdir}/usr/share/gnome-shell/extensions install
-  install -m644 "schemas/org.gnome.shell.extensions.dash-to-dock.gschema.xml" \
-    "${pkgdir}/usr/share/glib-2.0/schemas/org.gnome.shell.extensions.dash-to-dock.gschema.xml"
+# template input; name=modularize-package
+# template input; name=install-code
+# template input; name=install-schemas
+# template input; name=install-locale
+
+package_09_media() {
+  cp -r --no-preserve=ownership,mode media "$destdir"
 }
