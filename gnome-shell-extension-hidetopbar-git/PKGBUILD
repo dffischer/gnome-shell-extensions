@@ -2,9 +2,9 @@
 # template input; name=github
 
 pkgname='gnome-shell-extension-hidetopbar-git'
-pkgdesc="Gnome 3 extension to hide the top bar except in overview mode"
 pkgver=r132.9758a91
 pkgrel=1
+pkgdesc="Gnome 3 extension to hide the top bar except in overview mode"
 arch=(any)
 url='https://github.com/mlutfy/hidetopbar'
 license=(GPLv2)
