@@ -3,4 +3,5 @@ PKGBUILD.expanded
 *.pkg.tar*
 */*/
 *.zip
+*.tar.gz
 *.html
