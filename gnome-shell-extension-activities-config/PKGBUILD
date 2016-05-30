@@ -2,13 +2,12 @@
 # template input; name=github
 
 pkgname="gnome-shell-extension-activities-config"
-pkgver=35
-pkgrel=2
+pkgver=36
+pkgrel=1
 pkgdesc="Configure the Activities Button with the Activities Configurator Extension and the Gnome Shell Extension Preferences Tool."
 arch=(any)
 url="https://extensions.gnome.org/extension/358/activities-configurator/"
 license=(GPLv2)
-depends=('gnome-shell>=3.8')
 source=("extension.html::$url"
         'archlinux-logo-gray-scalable.svg')
 md5sums=('SKIP'
@@ -46,6 +45,7 @@ build() {
   cp --remove-destination ../archlinux-logo-gray-scalable.svg archlinux-logo-gray-scalable.svg
 }
 
+# template input; name=find-version
 # template input; name=modularize-package
 # template input; name=install-code
 # template input; name=install-schemas
