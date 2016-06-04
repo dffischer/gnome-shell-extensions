@@ -1,0 +1,19 @@
+# Maintainer: XZS <d dot f dot fischer at web dot de>
+# template input; name=github
+
+pkgname=gnome-shell-extension-coverflow-alt-tab
+pkgver=1.0
+pkgrel=1
+pkgdesc="Replacement of Alt-Tab, iterates through windows in a cover-flow manner"
+arch=('any')
+url="https://github.com/dmo60/CoverflowAltTab"
+license=('GPL')
+makedepends=(jq)
+source=("$url/releases/download/v1.0/CoverflowAltTab-${pkgver}.zip")
+md5sums=('548132e8788ca6b1b79027a12a12b770')
+
+# template input; name=find-version
+# template input; name=modularize-package
+# template input; name=install-code
+# template input; name=install-schemas
+# template input; name=install-locale
