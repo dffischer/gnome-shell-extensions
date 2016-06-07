@@ -1,0 +1,22 @@
+# Maintainer: XZS <d dot f dot fischer at web dot de>
+# template input; name=github
+
+pkgname="gnome-shell-extension-volume-mixer"
+pkgver=0.9.1
+pkgrel=1
+pkgdesc="Applet allowing separate configuration of pulseaudio mixers"
+arch=(any)
+url="https://github.com/aleho/gnome-shell-volume-mixer"
+license=(GPLv2)
+depends=(python)
+
+# template input; name=source-github-release
+# template input; name=find-version
+# template input; name=modularize-package
+# template input; name=install-code
+# template input; name=install-schemas
+# template input; name=install-locale
+
+package_09_pautils() {
+  cp -r --no-preserve=ownership pautils "$destdir"
+}
