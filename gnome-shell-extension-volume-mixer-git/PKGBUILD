@@ -2,7 +2,7 @@
 # Contributor: Llewelyn Trahaearn <WoefulDerelict at GMail dot com>
 # template input; name=github
 
-pkgname="gnome-shell-extension-volume-mixer-git"
+pkgname=gnome-shell-extension-volume-mixer-git
 pkgver=0.9.r0.g3e7a459
 pkgrel=1
 pkgdesc="Applet allowing separate configuration of pulseaudio mixers"

@@ -1,7 +1,7 @@
 # Maintainer: XZS <d dot f dot fischer at web dot de>
 # template input; name=github
 
-pkgname="gnome-shell-extension-caffeine-git"
+pkgname=gnome-shell-extension-caffeine-git
 pkgver=r84.f3053b3
 pkgrel=1
 pkgdesc="Fill the cup to inhibit auto suspend and screensaver."

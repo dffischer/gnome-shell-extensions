@@ -1,7 +1,7 @@
 # Maintainer: XZS <d dot f dot fischer at web dot de>
 # template input; name=github
 
-pkgname='gnome-shell-extension-justshowthewindow-git'
+pkgname=gnome-shell-extension-justshowthewindow-git
 pkgver=r2.275595c
 pkgrel=1
 pkgdesc="Rather than the default gnome-shell behaviour of showing a notification that a window is ready, the window is just displayed"
