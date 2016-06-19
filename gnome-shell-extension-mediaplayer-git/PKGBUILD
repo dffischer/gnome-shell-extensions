@@ -12,7 +12,7 @@ license=('GPL2')
 depends=('gnome-shell')
 makedepends=('git' 'gnome-common' 'intltool')
 optdepends=('mpdris2-git: MPD support')
-install=${pkgname%-*}.install
+install=gschemas.install
 source=("${pkgname%-*}::git+${url}.git")
 sha256sums=('SKIP')
 
