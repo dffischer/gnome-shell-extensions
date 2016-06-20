@@ -3,36 +3,28 @@
 # template input; name=github
 
 pkgname=gnome-shell-extension-mediaplayer-git
-pkgver=3.10.r396.d3cd98d
+pkgver=r502.89216cd
 pkgrel=1
 pkgdesc='A mediaplayer indicator for the Gnome Shell'
 arch=('any')
 url='https://github.com/eonpatapon/gnome-shell-extensions-mediaplayer'
 license=('GPL2')
 depends=('gnome-shell')
-makedepends=('git' 'gnome-common' 'intltool')
+makedepends=('gnome-common' 'intltool')
 optdepends=('mpdris2-git: MPD support')
 install=gschemas.install
-source=("${pkgname%-*}::git+${url}.git")
-sha256sums=('SKIP')
 
-pkgver() {
-  cd ${pkgname%-*}
-
-  printf "3.10.r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-}
+# template input; name=git
 
 build() {
-  cd ${pkgname%-*}
-
+  cd "$_gitname"
   ./autogen.sh
   ./configure --prefix='/usr' --disable-schemas-compile
   make
 }
 
 package() {
-  cd ${pkgname%-*}
-
+  cd "$_gitname"
   make DESTDIR="${pkgdir}" install
 }
 
