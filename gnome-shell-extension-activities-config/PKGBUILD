@@ -45,13 +45,14 @@ build() {
   cp --remove-destination ../archlinux-logo-gray-scalable.svg archlinux-logo-gray-scalable.svg
 }
 
-# template input; name=find-version
 # template input; name=modularize-package
 # template input; name=install-code
-# template input; name=install-schemas
-# template input; name=install-locale
 # template input; name=unify-conveniencejs
 
 package_09_icon() {
   install -Dm644 *.svg "$destdir"
 }
+
+# template input; name=install-locale
+# template input; name=install-schemas
+# template input; name=find-version

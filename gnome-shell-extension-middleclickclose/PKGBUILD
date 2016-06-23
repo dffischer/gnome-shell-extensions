@@ -12,7 +12,7 @@ license=(unknown)
 source=("${pkgname}.zip::http://sourceforge.net/projects/mt-miscellaneous/files/gnome-extensions/3.16/${_extname}.v6.shell-extension.zip/download")
 md5sums=('e7ea5800d8408ea33496cdac01a058f6')
 
-# template input; name=find-version
 # template input; name=modularize-package
 # template input; name=install-code
 # template input; name=install-schemas
+# template input; name=find-version

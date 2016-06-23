@@ -12,8 +12,8 @@ url="https://github.com/dmo60/CoverflowAltTab"
 license=('GPL')
 
 # template input; name=git
-# template input; name=find-version
 # template input; name=modularize-package
 # template input; name=install-code
-# template input; name=install-schemas
 # template input; name=install-locale
+# template input; name=install-schemas
+# template input; name=find-version

@@ -10,13 +10,14 @@ url="https://github.com/eonpatapon/gnome-shell-extension-caffeine"
 license=(GPLv2)
 
 # template input; name=git
-# template input; name=find-version
 # template input; name=modularize-package
 # template input; name=install-code
-# template input; name=install-schemas
-# template input; name=install-locale
 # template input; name=unify-conveniencejs
 
 package_09_icons() {
   cp -r --no-preserve=ownership,mode icons "$destdir"
 }
+
+# template input; name=install-locale
+# template input; name=install-schemas
+# template input; name=find-version

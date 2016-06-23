@@ -10,8 +10,8 @@ url="http://github.com/gfxmonk/gnome-shell-scroll-workspaces"
 license=(GPLv2)
 
 # template input; name=git
-# template input; name=find-version
 # template input; name=modularize-package
 # template input; name=install-code
-# template input; name=install-schemas
 # template input; name=unify-conveniencejs
+# template input; name=install-schemas
+# template input; name=find-version

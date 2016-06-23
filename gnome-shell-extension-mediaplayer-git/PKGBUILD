@@ -23,9 +23,10 @@ build() {
 }
 
 # template input; name=modularize-package
-# template input; name=find-version
 
 package_01_make_install() {
   cd "$_gitname"
   make DESTDIR="${pkgdir}" install
 }
+
+# template input; name=find-version
