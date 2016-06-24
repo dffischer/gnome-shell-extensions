@@ -1,4 +1,4 @@
-depends[gnomeshell]=gnome-shell
+depends[125]=gnome-shell
 
 package_20_version() {
   local compatibles=($(\
@@ -12,7 +12,7 @@ package_20_version() {
   ) ]; then
     depends+=("gnome-shell<3.$((${max%%.*} + 1))")
   fi
-  unset depends[gnomeshell]
+  unset depends[125]
 }
 
 # vim: filetype=sh
