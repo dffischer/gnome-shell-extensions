@@ -1,14 +1,15 @@
 # Maintainer: XZS <d dot f dot fischer at web dot de>
 # template input; name=github
 
-pkgname=gnome-shell-extension-justshowthewindow-git
-pkgver=r2.275595c
+pkgname=gnome-shell-extension-stealmyfocus-git
+pkgver=r11
 pkgrel=1
-pkgdesc="Rather than the default gnome-shell behaviour of showing a notification that a window is ready, the window is just displayed"
+pkgdesc="Shell Extension that let window that demand attention to steal focus"
 arch=(any)
 depends=('gnome-shell>=3.6')
 license=(GPLv2)
-url="https://github.com/ryanlerch/gnome-shell-extension-justshowthewindow"
+replaces=('gnome-shell-extension-justshowthewindow')
+url="https://github.com/v-dimitrov/gnome-shell-extension-stealmyfocus"
 install=notice.install
 
 # template input; name=git
