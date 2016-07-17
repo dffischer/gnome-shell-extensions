@@ -6,13 +6,12 @@ pkgver=r11
 pkgrel=1
 pkgdesc="Shell Extension that let window that demand attention to steal focus"
 arch=(any)
-depends=('gnome-shell>=3.6')
 license=(GPLv2)
 replaces=('gnome-shell-extension-justshowthewindow')
 url="https://github.com/v-dimitrov/gnome-shell-extension-stealmyfocus"
 install=notice.install
 
 # template input; name=git
-# template input; name=adjust-version
+# template input; name=find-version
 # template input; name=modularize-package
 # template input; name=install-code
