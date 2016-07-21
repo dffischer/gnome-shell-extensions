@@ -13,18 +13,9 @@ url="https://micheleg.github.io/dash-to-dock/"
 _giturl="git+https://github.com/micheleg/dash-to-dock/"
 license=('GPL')
 depends=('dconf')
-makedepends=('intltool' 'imagemagick')
+makedepends=('intltool')
 
 # template input; name=git
-
-prepare() {
-  cd "$_gitname"
-  grep -lZr logo.svg | while IFS= read -rd $'\0' file
-  do
-    sed -i 's/\(logo\.\)svg/\1png/' "$file"
-  done
-  convert media/logo.{svg,png}
-}
 
 build() {
   cd "$_gitname"
