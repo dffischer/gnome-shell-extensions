@@ -5,7 +5,7 @@
 # template input; name=github
 
 pkgname=gnome-shell-extension-dash-to-dock-git
-pkgver=57
+pkgver=59
 pkgrel=1
 pkgdesc="move the dash out of the overview transforming it in a dock"
 arch=('any')
