@@ -6,28 +6,28 @@
 pkgname=gnome-shell-extension-mediaplayer-git
 pkgver=r658
 pkgrel=1
-pkgdesc='A mediaplayer indicator for the Gnome Shell'
+pkgdesc='MPRISv2 media player indicator for GNOME Shell'
 arch=('any')
-url='https://github.com/eonpatapon/gnome-shell-extensions-mediaplayer'
+url='https://github.com/JasonLG1979/gnome-shell-extensions-mediaplayer'
 license=('GPL2')
-makedepends=('gnome-common' 'intltool')
-optdepends=('mpdris2-git: MPD support')
+makedepends=('intltool' 'meson')
+optdepends=('mpdris2: MPD support')
 install=gschemas.install
 
 # template input; name=git
 
 build() {
   cd "$_gitname"
-  ./autogen.sh
-  ./configure --prefix='/usr' --disable-schemas-compile
-  make
+  rm -rf builddir
+  meson builddir --prefix='/usr'
+  ninja -C builddir
 }
 
 # template input; name=modularize-package
 
 package_01_make_install() {
   cd "$_gitname"
-  make DESTDIR="${pkgdir}" install
+  ninja -C builddir install
 }
 
 # template input; name=find-version
