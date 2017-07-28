@@ -4,7 +4,7 @@
 # template input; name=github
 
 pkgname=gnome-shell-extension-mediaplayer-git
-pkgver=0.2.6
+pkgver=0.2.6.1
 pkgrel=1
 pkgdesc='A mediaplayer indicator for the Gnome Shell'
 arch=('any')
