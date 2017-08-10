@@ -1,33 +1,37 @@
 # Maintainer: XZS <d dot f dot fischer at web dot de>
 # Contributor: Morris Jobke <hey at morrisjobke dot de>
 # Contributor: alucryd <alucryd at gmail dot com>
-# template input; name=github
+# This PKGBUILD is maintained on GitHub <https://github.com/dffischer/gnome-shell-extensions>.
+# You may find it convenient to file issues and pull requests there.
 
 pkgname=gnome-shell-extension-mediaplayer-git
-pkgver=r658
+pkgver=3.1.r1.g4e69776
 pkgrel=1
 pkgdesc='A mediaplayer indicator for the Gnome Shell'
 arch=('any')
 url='https://github.com/eonpatapon/gnome-shell-extensions-mediaplayer'
 license=('GPL2')
-makedepends=('gnome-common' 'intltool')
+makedepends=('gnome-common' 'intltool' 'git' 'meson' 'ninja')
 optdepends=('mpdris2-git: MPD support')
 install=gschemas.install
+source=("${_gitname:=${pkgname%-git}}::${_giturl:-git+$url}")
+provides=("$_gitname=$pkgver")
+conflicts=("$_gitname")
+sha256sums=('SKIP')
 
-# template input; name=git
+pkgver() {
+  cd ${_gitname:-$pkgname}
+  git describe --long --tags 2>/dev/null | sed 's/[^[:digit:]]*\(.\+\)-\([[:digit:]]\+\)-g\([[:xdigit:]]\{7\}\)/\1.r\2.g\3/;t;q1'
+  [ ${PIPESTATUS[0]} -ne 0 ] && \
+	  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
 
 build() {
   cd "$_gitname"
-  ./autogen.sh
-  ./configure --prefix='/usr' --disable-schemas-compile
-  make
+  meson builddir --prefix="${pkgdir}/usr" || :
 }
 
-# template input; name=modularize-package
-
-package_01_make_install() {
+package() {
   cd "$_gitname"
-  make DESTDIR="${pkgdir}" install
+  ninja -C builddir install
 }
-
-# template input; name=find-version
