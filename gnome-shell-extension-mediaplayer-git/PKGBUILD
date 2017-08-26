@@ -1,33 +1,41 @@
 # Maintainer: XZS <d dot f dot fischer at web dot de>
 # Contributor: Morris Jobke <hey at morrisjobke dot de>
 # Contributor: alucryd <alucryd at gmail dot com>
+# Contributor: Rich Daley <rich at fishpercolator dot co dot uk>
 # template input; name=github
-
 pkgname=gnome-shell-extension-mediaplayer-git
-pkgver=r658
+pkgver=r877.3cb9612
 pkgrel=1
-pkgdesc='A mediaplayer indicator for the Gnome Shell'
+pkgdesc="A mediaplayer indicator for the gnome-shell."
 arch=('any')
-url='https://github.com/eonpatapon/gnome-shell-extensions-mediaplayer'
+url="https://github.com/JasonLG1979/gnome-shell-extensions-mediaplayer"
 license=('GPL2')
-makedepends=('gnome-common' 'intltool')
-optdepends=('mpdris2-git: MPD support')
+depends=('gnome-shell')
+makedepends=('git' 'meson') 
 install=gschemas.install
+source=("${pkgname}::git+${url}.git")
+noextract=()
+md5sums=('SKIP')
 
-# template input; name=git
+pkgver() {
+	cd "$srcdir/$pkgname"
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+	cd "$srcdir/$pkgname"
+	if [ -d builddir ]; then
+	  rm -r builddir
+	fi
+}
 
 build() {
-  cd "$_gitname"
-  ./autogen.sh
-  ./configure --prefix='/usr' --disable-schemas-compile
-  make
+	cd "$srcdir/$pkgname"
+	meson builddir --prefix=$pkgdir/usr
 }
 
-# template input; name=modularize-package
-
-package_01_make_install() {
-  cd "$_gitname"
-  make DESTDIR="${pkgdir}" install
+package() {
+	cd "$srcdir/$pkgname"
+	ninja -C builddir install
 }
 
-# template input; name=find-version
