@@ -1,0 +1,40 @@
+# Maintainer: Rich Daley <rich at fishpercolator dot co dot uk>
+# template input; name=github
+pkgname=gnome-shell-extension-mconnect-git
+pkgver=r257.49a861f
+pkgrel=1
+pkgdesc="KDE Connect/MConnect integration for Gnome Shell"
+arch=('any')
+url="https://github.com/andyholmes/gnome-shell-extension-mconnect"
+license=('GPL2')
+depends=('gnome-shell')
+optdepends=('mconnect' 'kdeconnect')
+makedepends=('git' 'meson' 'findutils') 
+install=gschemas.install
+source=("${pkgname}::git+${url}.git")
+noextract=()
+md5sums=('SKIP')
+
+pkgver() {
+	cd "$srcdir/$pkgname"
+	printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
+
+prepare() {
+	cd "$srcdir/$pkgname"
+	if [ -d build ]; then
+	  rm -r build
+	fi
+}
+
+build() {
+	cd "$srcdir/$pkgname"
+	meson build --prefix=$pkgdir/usr
+}
+
+package() {
+	cd "$srcdir/$pkgname"
+	ninja -C build install
+	find $pkgdir -name schemas -type d -exec glib-compile-schemas {} \;
+}
+
