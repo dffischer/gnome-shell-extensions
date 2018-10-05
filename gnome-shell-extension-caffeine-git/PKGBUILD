@@ -1,29 +1,32 @@
 # Maintainer: XZS <d dot f dot fischer at web dot de>
 # Contributor: sanduhrs <stefan.auditor@erdfisch.de>
-# template input; name=github
+# Contributor: Baron Hou <houbaron@gmail.com>
 
-pkgname=gnome-shell-extension-caffeine-git
-pkgver=r130
+pkgname=gnome-shell-extension-caffeine-plus-git
+pkgver=r181.83b4ad0
 pkgrel=1
-pkgdesc="Fill the cup to inhibit auto suspend and screensaver."
+pkgdesc="Disable screensaver and auto suspend"
 arch=(any)
-url="https://github.com/eonpatapon/gnome-shell-extension-caffeine"
+url="https://github.com/qunxyz/gnome-shell-extension-caffeine"
 license=(GPLv2)
+depends=('gnome-shell')
+optdepends=('gnome-tweak-tool')
+source=("${pkgname}::git+git://github.com/qunxyz/gnome-shell-extension-caffeine.git")
+sha256sums=('SKIP')
 
-# template input; name=git
-# template input; name=modularize-package
-# template input; name=install-code
-# template input; name=unify-conveniencejs
+pkgver() {
+  cd ${pkgname}
+  printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+}
 
-build() {
-  cd "$_gitname"
+prepare() {
+  cd "${srcdir}/${pkgname}"
   ./update-locale.sh
 }
 
-package_09_icons() {
-  cp -r --no-preserve=ownership,mode icons "$destdir"
+package() {
+  cd "${srcdir}/${pkgname}"
+  glib-compile-schemas --strict --targetdir=caffeine-plus@patapon.info/schemas/ caffeine-plus@patapon.info/schemas
+  mkdir -p "${pkgdir}/usr/share/gnome-shell/extensions"
+  cp -r --no-preserve=ownership,mode caffeine-plus@patapon.info "${pkgdir}/usr/share/gnome-shell/extensions/"
 }
-
-# template input; name=install-locale
-# template input; name=install-schemas
-# template input; name=find-version
